@@ -1,0 +1,40 @@
+public class function 
+{
+	int constant = 1;
+	int cV = 0;
+	int exponent = 1;
+	int upper =0;
+	int lower =0;
+	double numRec = 0;
+	public function(int constant, int exponent , int cV, int upper, int lower, double numRec)
+	{
+		this.constant = constant;
+		this.exponent = exponent;
+		this.cV = cV;
+		this.upper=upper;
+		this.lower=lower;
+		this.numRec=numRec;
+	}//end of full constructor
+	public double solveFor(int constant, double x, int exponent)
+	{
+		
+		return (Math.pow(x, exponent)*constant);
+		
+	}//solving for function F
+	public double NumberCrunching()//the goal is to take all of the information (lower and upper limit), number of squares, to find the intigral
+    {
+        double sum=0;
+        double deltaX=(upper-lower)/numRec;
+        for(int k = 0; k<numRec;k++)
+        {
+        	sum+= solveFor(constant, ((double)lower+(deltaX*k)), exponent)*deltaX;
+        }
+        return sum;
+    } //finding area of rectangle and adding it together
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return ""+constant+"x^("+exponent+")+" +cV;
+	}//generates equation for humans to read
+}
