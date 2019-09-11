@@ -1,0 +1,12 @@
+
+public class RiemannSum {//Find Left Riemann Sum
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		//function( constant,  exponent ,  cV,  upper,  lower, double numRec)
+		function a  = new function(5, 7, 2, 1, 0, 6);
+		System.out.println(a.toString());
+		System.out.println(a.NumberCrunching());
+	}//end of main
+}//end of class RiemannSum
